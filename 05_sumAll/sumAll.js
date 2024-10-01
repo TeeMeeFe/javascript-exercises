@@ -1,10 +1,13 @@
 const sumAll = function(startIndex, endIndex) {
-    const start = parseInt(Math.min(startIndex, endIndex));
-    const end = parseInt(Math.max(startIndex, endIndex));
+    if( startIndex < 0 || endIndex < 0 || !Number.isInteger(startIndex) || !Number.isInteger(endIndex) || 
+        typeof startIndex !== "number" || typeof endIndex !== "number" ) { 
+        return 'ERROR' 
+    };
+
+    const start = Math.min(startIndex, endIndex);
+    const end = Math.max(startIndex, endIndex);
     let i = start;
     let num = start;
-
-    if( start < 0 || end < 0 || typeof start !== "number" || typeof end !== "number" ) { return 'ERROR' };
 
     do { 
         num += start + i;
@@ -15,7 +18,7 @@ const sumAll = function(startIndex, endIndex) {
     return num;
 };
 
-const result = sumAll(1, 4);
+const result = sumAll(1, 4000);
 console.log(result);
 
 // Do not edit below this line
