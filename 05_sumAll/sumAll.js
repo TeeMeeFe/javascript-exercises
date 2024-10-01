@@ -1,6 +1,5 @@
 const sumAll = function(startIndex, endIndex) {
-    if( startIndex < 0 || endIndex < 0 || !Number.isInteger(startIndex) || !Number.isInteger(endIndex) || 
-        typeof startIndex !== "number" || typeof endIndex !== "number" ) { 
+    if( startIndex < 0 || endIndex < 0 || !Number.isInteger(startIndex) || !Number.isInteger(endIndex) ) { 
         return 'ERROR' 
     };
 
