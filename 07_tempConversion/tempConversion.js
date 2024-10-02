@@ -8,6 +8,7 @@ const convertToCelsius = function(num) {
 };
 
 const convertToFahrenheit = function(num) {
+    return round((num * 1.8) + 32, 1);
 };
 
 // Do not edit below this line
