@@ -1,7 +1,13 @@
-const convertToCelsius = function() {
+function round(value, precision) {
+    const multiplier = Math.pow(10, precision || 0);
+    return Math.round(value * multiplier) / multiplier;
 };
 
-const convertToFahrenheit = function() {
+const convertToCelsius = function(num) {
+    return round((num - 32) * 0.555556, 1);
+};
+
+const convertToFahrenheit = function(num) {
 };
 
 // Do not edit below this line
