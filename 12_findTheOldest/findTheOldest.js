@@ -1,32 +1,11 @@
 const findTheOldest = function(arr) {
-    const today = Date.now();
+    const today = new Date().getFullYear();
     return arr.reduce((prevPerson, currPerson) => {
-        let prevAge = (prevPerson.yearOfDeath - prevPerson.yearOfBirth)
-        let currAge = (currPerson.yearOfDeath - currPerson.yearOfBirth)
+        let prevAge = (prevPerson.yearOfDeath !== undefined ? prevPerson.yearOfDeath : today) - prevPerson.yearOfBirth
+        let currAge = (currPerson.yearOfDeath !== undefined ? currPerson.yearOfDeath : today) - currPerson.yearOfBirth
         return prevAge > currAge ? prevPerson : currPerson
     });
 };
-
-// Debug object, remove before flight!
-const people = [
-    {
-      name: "Carly",
-      yearOfBirth: 1942,
-      yearOfDeath: 1970,
-    },
-    {
-      name: "Ray",
-      yearOfBirth: 1962,
-      yearOfDeath: 2011,
-    },
-    {
-      name: "Jane",
-      yearOfBirth: 1912,
-      yearOfDeath: 1941,
-    }
-  ]
-
-console.log(findTheOldest(people));
 
 // Do not edit below this line
 module.exports = findTheOldest;
